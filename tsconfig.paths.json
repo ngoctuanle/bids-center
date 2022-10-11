@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@models": ["./src/models"],
+      "@models/*": ["./src/models/*"],
+      "@layouts": ["./src/layouts"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@utils": ["./src/utils"],
+      "@utils/*": ["./src/utils/*"],
+      "@pages": ["./src/pages"],
+      "@pages/*": ["./src/pages/*"],
+      "@context": ["./src/context"],
+      "@context/*": ["./src/context/*"]
+    }
+  }
+}
