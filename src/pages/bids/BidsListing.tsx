@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Tabs } from 'antd';
 import { useAuthContext } from '@context/AuthContext';
+import { CompletedBidsListing } from './CompletedBidsListing';
+import { OngoingBidsListing } from './OngoingBidsListing';
 
 enum TABS {
   COMPLETED = 'COMPLETED',
@@ -19,9 +21,17 @@ export const BidsListing = () => {
       defaultActiveKey={TABS.COMPLETED}
       tabBarExtraContent={addNewItemBtn}
       items={[
-        { label: 'Completed', key: TABS.COMPLETED },
-        { label: 'On going', key: TABS.ON_GOING },
-      ].filter((item) => isAuthenticated || item.key === TABS.COMPLETED)}
+        {
+          label: 'Completed',
+          key: TABS.COMPLETED,
+          children: <CompletedBidsListing />,
+        },
+        {
+          label: 'On going',
+          key: TABS.ON_GOING,
+          children: <OngoingBidsListing />,
+        },
+      ]}
     />
   );
 };
